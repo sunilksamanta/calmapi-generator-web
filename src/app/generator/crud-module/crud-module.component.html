@@ -1,1 +1,33 @@
-<p>crud-module works!</p>
+<div nz-row nzGutter="20">
+  <div nz-col nzSpan="12">
+    <nz-card nzTitle="Module Builder">
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="moduleName">Module Name</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Module Name is required">
+            <input nz-input formControlName="moduleName" id="moduleName" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-divider nzText="Fields" nzOrientation="left"></nz-divider>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="moduleName">Module Name</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Module Name is required">
+            <input nz-input />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row class="register-area">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Build your Module</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-card>
+  </div>
+
+  <div nz-col nzSpan="12">
+    <nz-card [nzTitle]="'Module Preview: ' + validateForm.value.moduleName">
+
+    </nz-card>
+  </div>
+</div>
+
